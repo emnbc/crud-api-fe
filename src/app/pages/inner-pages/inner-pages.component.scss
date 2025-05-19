@@ -1,0 +1,33 @@
+$header-height: 100px;
+$footer-height: 100px;
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  position: fixed;
+  flex: 0 0 $header-height;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.app-scrollable {
+  display: flex;
+  flex-direction: column;
+  margin-top: $header-height;
+  overflow-y: auto;
+  height: calc(100vh - #{$header-height});
+}
+
+.app-content {
+  flex: 1 0 auto;
+}
+
+.app-footer {
+  flex: 0 0 $footer-height;
+}

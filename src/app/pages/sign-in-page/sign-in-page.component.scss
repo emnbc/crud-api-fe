@@ -1,0 +1,29 @@
+.login-form-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form-title {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.login-form {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-full-width {
+  width: 100%;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

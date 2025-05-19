@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://crud-java.tupikov.me",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
