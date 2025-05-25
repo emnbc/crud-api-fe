@@ -40,7 +40,7 @@ export class SignInPageComponent {
       this.auth.logIn(this.loginForm.getRawValue()).subscribe({
         next: (res) => {
           this.loginForm.enable();
-          res && this.auth.setToken(res);
+          res?.accessToken && this.auth.setToken(res.accessToken);
           this.router.navigate(['/']);
         },
         error: () => this.loginForm.enable(),

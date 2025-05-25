@@ -1,16 +1,15 @@
 import { inject, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BASE_URL } from './http.service';
+import { BASE_URL, HttpService } from './http.service';
 import { catchError, map, of, tap } from 'rxjs';
 import { ILoginForm, IUserData } from '../models/auth.interface';
-import { HttpClient } from '@angular/common/http';
 
 const TOKEN = 'access-token';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   private router = inject(Router);
-  private http = inject(HttpClient);
+  private http = inject(HttpService);
 
   private _user: IUserData | null = null;
 
@@ -21,24 +20,13 @@ export class AuthService {
   }
 
   logIn(data: ILoginForm) {
-    return this.http.post(BASE_URL + '/auth/login', data, {
-      responseType: 'text',
-    });
+    return this.http.post<{ accessToken: string }>('/auth/login', data);
   }
 
   getUserData() {
-    // TODO: Replace with actual API call to get user data
-    return this.http.get<IUserData>(BASE_URL + '/users').pipe(
-      tap(
-        () =>
-          (this._user = {
-            id: 1,
-            name: 'John Doe',
-            email: 'john.doe@example.com',
-            createdAt: '2025-01-01',
-          })
-      )
-    );
+    return this.http
+      .get<IUserData>('/users/me')
+      .pipe(tap((user) => (this._user = user)));
   }
 
   checkAuth() {
