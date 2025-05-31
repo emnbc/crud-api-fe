@@ -1,11 +1,19 @@
 <div class="app-container">
   <header class="app-header">
-    <app-header></app-header>
+    <app-header [sidenav]="sidenav"></app-header>
   </header>
 
   <div class="app-scrollable">
     <main class="app-content">
-      <router-outlet></router-outlet>
+      <mat-sidenav-container class="app-sidenav-container" autosize>
+        <mat-sidenav class="app-nav" #sidenav mode="side" opened>
+          <p>Menu</p>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
     </main>
 
     <footer class="app-footer">

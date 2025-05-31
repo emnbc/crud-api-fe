@@ -1,5 +1,5 @@
-$header-height: 100px;
-$footer-height: 100px;
+$header-height: 64px;
+$footer-height: 64px;
 
 .app-container {
   display: flex;
@@ -24,10 +24,21 @@ $footer-height: 100px;
   height: calc(100vh - #{$header-height});
 }
 
+.app-sidenav-container {
+  height: 100%;
+}
+
+.app-nav {
+  border-right: 1px solid var(--mat-sys-surface-variant);
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 .app-content {
   flex: 1 0 auto;
 }
 
 .app-footer {
   flex: 0 0 $footer-height;
+  border-top: 1px solid var(--mat-sys-surface-variant);
 }
