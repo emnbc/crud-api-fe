@@ -10,6 +10,12 @@
   @include mat.icon-overrides((
     color: var(--mat-sys-on-primary),
   ));
+  @include mat.slide-toggle-overrides((
+    label-text-color: var(--mat-sys-on-primary),
+    selected-track-color: var(--mat-sys-on-secondary),
+    selected-hover-track-color: var(--mat-sys-on-secondary),
+    selected-focus-track-color: var(--mat-sys-on-secondary),
+  ));
 }
 
 .app-header {

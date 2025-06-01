@@ -17,8 +17,8 @@ html {
 :root {
   @include mat.sidenav-overrides(
     (
-      container-background-color: var(--mat-sys-on-primary),
-      content-background-color: var(--mat-sys-on-primary),
+      container-background-color: var(--mat-sys-on-secondary),
+      content-background-color: var(--mat-sys-on-secondary),
     )
   );
 }

@@ -1,12 +1,12 @@
 import { HttpClient, HttpParams, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export const BASE_URL = '/api';
 
 @Injectable({ providedIn: 'root' })
 export class HttpService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
   get<T>(url: string, params?: { [key: string]: any }): Observable<T> {
     return this.http.get<T>(`${BASE_URL}${url}`, {

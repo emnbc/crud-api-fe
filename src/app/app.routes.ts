@@ -8,7 +8,6 @@ export const routes: Routes = [
       import('./pages/inner-pages/inner-pages.component').then(
         (m) => m.InnerPagesComponent
       ),
-    pathMatch: 'full',
     canActivate: [AuthGuard],
     children: [
       {
@@ -16,6 +15,14 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./pages/inner-pages/main-page/main-page.component').then(
             (m) => m.MainPageComponent
+          ),
+        pathMatch: 'full',
+      },
+      {
+        path: 'users',
+        loadComponent: () =>
+          import('./pages/inner-pages/users-page/users-page.component').then(
+            (m) => m.UsersPageComponent
           ),
         pathMatch: 'full',
       },

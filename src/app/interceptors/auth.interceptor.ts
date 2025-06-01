@@ -43,9 +43,6 @@ export const authInterceptor = (
           }
         }
       },
-      complete: () => {
-        console.error('HTTP Request completed');
-      },
     })
   );
 };

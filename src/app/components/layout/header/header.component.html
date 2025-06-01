@@ -4,6 +4,12 @@
   </button>
   <span>CRUD API Java Spring Test</span>
   <span class="header-spacer"></span>
+  <mat-slide-toggle
+    [checked]="darkModeSignal()"
+    (change)="darkModeSignal.set($event.checked)"
+    >Dark Mode</mat-slide-toggle
+  >
+  <div></div>
   <button mat-icon-button>
     <mat-icon>favorite</mat-icon>
   </button>
