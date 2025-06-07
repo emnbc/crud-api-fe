@@ -7,9 +7,9 @@
     ></app-header>
   </header>
 
-  <div class="app-scrollable">
-    <main class="app-content">
-      <mat-sidenav-container class="app-sidenav-container" autosize>
+  <div class="app-content">
+    <main class="app-height-full">
+      <mat-sidenav-container autosize class="app-height-full">
         <mat-sidenav
           class="app-nav"
           #sidenav
@@ -36,13 +36,16 @@
           </mat-action-list>
         </mat-sidenav>
         <mat-sidenav-content>
-          <router-outlet></router-outlet>
+          <div class="app-sidenav">
+            <div class="app-sidenav-body">
+              <router-outlet></router-outlet>
+            </div>
+            <footer class="app-sidenav-footer">
+              <app-footer></app-footer>
+            </footer>
+          </div>
         </mat-sidenav-content>
       </mat-sidenav-container>
     </main>
-
-    <footer class="app-footer">
-      <app-footer></app-footer>
-    </footer>
   </div>
 </div>
