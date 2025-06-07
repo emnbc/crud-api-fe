@@ -1,13 +1,26 @@
 <div class="app-container" [class]="isDarkMode() ? 'dark-mode' : 'light-mode'">
   <header class="app-header">
-    <app-header [sidenav]="sidenav" [isDarkMode]="isDarkMode"></app-header>
+    <app-header
+      [sidenav]="sidenav"
+      [isDarkMode]="isDarkMode"
+      [isMobile]="isMobile()"
+    ></app-header>
   </header>
 
   <div class="app-scrollable">
     <main class="app-content">
       <mat-sidenav-container class="app-sidenav-container" autosize>
-        <mat-sidenav class="app-nav" #sidenav mode="side" opened>
-          <mat-action-list role="list" aria-label="Menu actions">
+        <mat-sidenav
+          class="app-nav"
+          #sidenav
+          [mode]="isMobile() ? 'over' : 'side'"
+          [opened]="isMobile() ? false : true"
+        >
+          <mat-action-list
+            role="list"
+            aria-label="Menu actions"
+            (click)="isMobile() && sidenav.close()"
+          >
             <a
               mat-list-item
               routerLink="/"

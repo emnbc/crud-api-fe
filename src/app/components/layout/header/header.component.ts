@@ -1,4 +1,4 @@
-import { Component, input, WritableSignal } from '@angular/core';
+import { Component, input, Signal, WritableSignal } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,6 +18,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 })
 export class HeaderComponent {
   sidenav = input.required<MatSidenav>();
+  isMobile = input.required<boolean>();
   isDarkMode = input.required<WritableSignal<boolean>>();
 
   get darkModeSignal() {

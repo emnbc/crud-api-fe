@@ -21,4 +21,10 @@ html {
       content-background-color: var(--mat-sys-on-secondary),
     )
   );
+  @include mat.toolbar-overrides(
+    (
+      standard-height: 64px,
+      mobile-height: 64px,
+    )
+  );
 }

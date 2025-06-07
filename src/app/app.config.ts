@@ -12,3 +12,5 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withInterceptors([authInterceptor])),
   ],
 };
+
+export const mobileBreakpoint = 768; // Mobile breakpoint in pixels
