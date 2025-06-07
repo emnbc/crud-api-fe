@@ -24,7 +24,7 @@ $footer-height: 64px;
 
 .app-content {
   margin-top: $header-height;
-  height: calc(100vh - #{$header-height});
+  height: calc(100% - #{$header-height});
 }
 
 .app-sidenav {
