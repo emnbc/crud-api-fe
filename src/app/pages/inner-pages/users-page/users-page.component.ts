@@ -62,7 +62,9 @@ export class UsersPageComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      if (result) {
+        this.fetchUsers();
+      }
     });
   }
 }
